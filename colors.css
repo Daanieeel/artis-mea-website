@@ -1,0 +1,24 @@
+:root {
+    --text: #050315;
+    --background: #fbfbfe;
+    --primary: #2f27ce;
+    --secondary: #f2f1ff;
+    --accent: #bd1664;
+
+    --shadow: 2, 0, 36;
+
+    --light: #fbfbfe;
+    --dark: #050315;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #ebe9fc;
+        --background: #0c0b0b;
+        --primary: #3a31d8;
+        --secondary: #171728;
+        --accent: #e94491;
+
+        --shadow: 81, 80, 87;
+    }
+}

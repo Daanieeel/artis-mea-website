@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Token einlösen</title>
+    <script src="sendTokenSubmission.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main>
+        <h1><span>Token</span> einlösen</h1>
+        <div class="text-container">
+            <p>Willkommen bei Artis-Mea! </p>
+            <p>Gib bitte deinen Benutzernamen und den Token ein, um auf dem Netzwerk zur Whitelist hinzugefügt zu werden.</p>
+        </div>
+        <hr>
+        <div>
+            <form id="tokenForm">
+                <label for="name"></label>
+                <input type="text" name="Name" id="name" placeholder="Minecraft-Name" required>
+                <label for="token"></label>
+                <input type="text" name="Token" id="token" placeholder="Token" required>
+                <input type="submit" value="Einlösen" id="submit">
+            </form>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('tokenForm').addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById('name').value;
+          const token = document.getElementById('token').value;
+
+          document.getElementById('submit').classList.add('loading');
+
+          console.log(name, token)
+          const response = await sendTokenSubmission(name, token);
+
+          if (response.token === token) {
+            window.location.href = "./success/";
+          }
+          else {
+            window.location.href = "./failed/";
+          }
+        });
+    </script>
+
+</body>
+</html>

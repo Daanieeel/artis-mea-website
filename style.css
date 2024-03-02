@@ -1,0 +1,117 @@
+@import "colors.css";
+@import "generic.css";
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100svh;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+body h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+body p {
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 150%;
+}
+
+body h1 span {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+body hr {
+    width: 150px;
+    border: 1px solid var(--text);
+}
+
+body main {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background);
+    box-shadow: 20px 20px 40px rgba(var(--shadow), 0.1);
+    padding: 5rem;
+    border-radius: 25px;
+    gap: 2rem;
+}
+
+body div form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    width: 300px;
+}
+
+body div form input {
+    background-color: var(--secondary);
+    color: var(--text);
+    height: 50px;
+    width: 100%;
+    padding: 0.5rem;
+    padding-inline: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+body div form input[type="submit"]{
+    --_button-color: var(--accent);
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: var(--_button-color);
+    cursor: pointer;
+    transition: all 0.2s linear;
+    font-weight: 500;
+    color: var(--light);
+}
+
+body div form input[type="submit"]:hover {
+    box-shadow: 0 0 30px var(--_button-color);
+    scale: 1.05;
+}
+
+body div form input:focus{
+    outline: none;
+}
+
+#submit.loading {
+    filter: saturate(0);
+    color: var(--light);
+    cursor: not-allowed;
+    animation: button-loading 3s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+@keyframes button-loading {
+    0% {
+        box-shadow: inherit;
+    }
+
+    50% {
+        box-shadow: 0 0 60px var(--_button-color);
+    }
+
+    100% {
+        box-shadow: inherit;
+    }
+}
