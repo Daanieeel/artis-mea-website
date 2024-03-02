@@ -1,5 +1,5 @@
 async function sendTokenSubmission(name, token) {
-  const url = 'http://localhost:3000/redeem-token'; //TODO replace
+  const url = 'http://localhost:3000/redeem-token';
   const data = {
     name, token
   };
