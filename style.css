@@ -25,7 +25,7 @@ body p {
     line-height: 150%;
 }
 
-body h1 span {
+body main h1 span {
     background: linear-gradient(90deg, var(--primary), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

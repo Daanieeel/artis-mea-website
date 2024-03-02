@@ -34,7 +34,7 @@
           const token = document.getElementById('token').value;
 
           document.getElementById('submit').classList.add('loading');
-          
+
           const response = await sendTokenSubmission(name, token);
 
           if (!response) {
