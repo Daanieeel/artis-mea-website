@@ -41,11 +41,26 @@
           console.log(name, token)
           const response = await sendTokenSubmission(name, token);
 
-          if (response.token === token) {
-            window.location.href = "./success/";
-          }
-          else {
+          if (!response) {
             window.location.href = "./failed/";
+
+          } else if (response.token === token) {
+            window.location.href = "./success/";
+
+          } else {
+
+            switch (response.type) {
+              case 1:
+                window.location.href = "./failed/invalid-or-used";
+                break;
+              case 2:
+                window.location.href = "./failed/already-whitelisted";
+                break;
+              default:
+                window.location.href = "./failed/";
+                break;
+            }
+
           }
         });
     </script>

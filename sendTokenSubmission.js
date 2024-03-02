@@ -16,6 +16,14 @@ async function sendTokenSubmission(name, token) {
     return await response.json();
   } catch (err) {
     console.log(err);
-    return null;
+
+    if(err.statusCode === 400) {
+      const errorResponse = await err.json();
+      return { error: errorResponse.type };
+    }
+
+    if(err.statusCode === 500) {
+      return null;
+    }
   }
 }
