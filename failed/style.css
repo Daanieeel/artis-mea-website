@@ -28,7 +28,8 @@ body hr {
 }
 
 body main {
-    width: 500px;
+    width: 90%;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,6 +59,7 @@ body main a {
     font-size: 0.9rem;
     font-family: "Poppins", sans-serif;
     transition: all 0.2s linear;
+    text-align: center;
 }
 
 body main a:hover {
