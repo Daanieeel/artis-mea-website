@@ -1,6 +1,7 @@
 @import "colors.css";
 @import "generic.css";
 @import "responsiveness.css";
+@import "font/font.css";
 
 body{
     display: flex;
