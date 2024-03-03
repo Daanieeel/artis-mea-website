@@ -69,8 +69,7 @@ body div form input {
     color: var(--text);
     height: 50px;
     width: 100%;
-    padding: 0.5rem;
-    padding-inline: 1rem;
+    padding: 0.5rem 1rem;
     border: none;
     border-radius: 10px;
     font-size: 0.9rem;
