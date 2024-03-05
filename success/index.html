@@ -17,9 +17,21 @@
 
         <hr>
 
-        <a href="../index.html">Zurück zur Homepage</a>
+        <a id="discord-link" href="">Zum Discord</a>
 
     </main>
 
 </body>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    fetch('../config.json')
+      .then(response => response.json())
+      .then(data => {
+        const discordLink = document.getElementById('discord-link');
+        discordLink.href = data['discord-invite'];
+      });
+  });
+</script>
+
 </html>
